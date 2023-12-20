@@ -1,0 +1,67 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row" style="margin-top: 20px">
+      <div class="col-md-6 offset-md-3">
+        <div class="container text-center">
+          <img
+            src="../../../assets/agregar-usuario.png"
+            width="100"
+            height="100"
+          />
+          <h1 class="text-center">Registro de Usuario</h1>
+          <form (ngSubmit)="onSubmit()">
+            <mat-form-field  appearance="outline">
+              <mat-label>Email:</mat-label>
+              <input
+                type="email"
+                matInput
+                required
+                [(ngModel)]="usuario.email"
+                name="email"
+                placeholder="Ingrese su email"
+              />
+              <mat-hint>El email debe ser unico</mat-hint>
+            </mat-form-field>
+            <br><br>
+
+            <mat-form-field  appearance="outline">
+              <mat-label>Dni:</mat-label>
+              <input
+                type="number"
+                matInput
+                required
+                [(ngModel)]="usuario.dni"
+                name="dni"
+                placeholder="Ingrese su Dni"
+              />
+              <mat-hint>El DNI debe ser unico</mat-hint>
+            </mat-form-field>
+            <br><br>
+            <mat-form-field  appearance="outline">
+              <mat-label>Clave:</mat-label>
+              <input
+                type="password"
+                matInput
+                required
+                [(ngModel)]="usuario.password"
+                name="password"
+                placeholder="Ingrese su clave"
+              />
+            </mat-form-field>
+            <div class="container text-center">
+              <button type="submit" mat-raised-button color="primary">
+                Crear Cuenta
+              </button>
+              <button type="reset" style="margin-left: 20px;" mat-raised-button color="blue">Limpiar</button>
+            </div>
+          </form>
+
+          <br />
+          <button mat-raised-button color="accent" (click)="volverAIndex()">
+            <i class="fa-solid fa-arrow-left"></i> Volver
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
