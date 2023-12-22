@@ -1,0 +1,35 @@
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+
+  .contenedor-padre {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual ancho */
+    height: 100vh; /* 100% del viewport height */
+  }
+
+  .contenedor {
+    border: 1px solid #ccc;
+    background-image: url('../../../assets/vecteezy_abstract-white-lines-square-background-modern-concept-with_13106785.jpg');
+    background-size: cover;
+    
+}
+.contenedor h1{
+    text-align: center;
+    margin-top: 200px;
+    font-size: 30px;
+    
+}
+
+  .gris {
+    color: gray;
+  }
+
+  .azul {
+    color: blue;
+  }
+ .otro-contenedor{
+    
+    
+ }
