@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user/user';
@@ -40,10 +40,19 @@ export class LoginComponent implements OnInit {
 
   this.userService.login(this.usuario).subscribe(
     (data)=>{
-      console.log("usuario:",data);
+      if (data !==null){
+        data as User;
+      console.log("el user es ",data)
+      localStorage.setItem('idUser', data.idUser)
+      console.log("el id local es: ",localStorage.getItem('idUser'))
       Swal.fire({title: 'Usuario correcto',
       text: 'Inicio de sesión correcto',
       icon: "success"})
+       // this.router.navigate(['admin/',dato.idUsuario,dato.rol])
+       this.router.navigate(['home'])
+      }
+     
+      
     },(error)=>{
       console.log(error);
       Swal.fire({title: 'Usuario incorrecto',
@@ -56,7 +65,7 @@ onSubmit(){
   this.login();
 }
 
-volverAIndex(){
-  //this.router.navigate(['index'])
+registrarse(){
+  this.router.navigate(['register'])
 }
 }

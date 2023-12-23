@@ -33,6 +33,7 @@ export class RegisterComponent implements OnInit {
         Swal.fire({title: 'Usuario guardado',
         text: 'Usuario creado correctamente',
         icon: "success"})
+        this.router.navigate(['login'])
       },(error)=>{
         console.log(error);
         this.snack.open("Email o DNI en uso", "Aceptar",{
@@ -49,6 +50,6 @@ onSubmit(){
 }
 
 volverAIndex(){
-  //this.router.navigate(['index'])
+  this.router.navigate(['login'])
 }
 }

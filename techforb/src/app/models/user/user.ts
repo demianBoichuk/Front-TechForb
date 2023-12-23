@@ -1,5 +1,5 @@
 export class User {
-    idUsuario:number;
+    idUsuario:BigInt;
     email:string;
     password:string;
     dni:BigInteger;

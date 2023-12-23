@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import baseUrl from '../helper';
+import { Observable } from 'rxjs';
+import { User } from 'src/app/models/user/user';
 
 
 @Injectable({
@@ -14,7 +16,7 @@ public register(user:any){
   return this.httpClient.post(`${baseUrl}/user/newUser`,user);
 
 }
-public login(user:any){
+public login(user:User): Observable<any>{
   return this.httpClient.post(`${baseUrl}/user/login`,user);
 
 }
